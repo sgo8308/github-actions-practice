@@ -4,7 +4,8 @@ name: 'test-every-push'
 on: push
 
 jobs:
-  echo:
+  checkout:
     runs-on: ubuntu-latest
     steps:
       - run: ls -al
+      - uses: actions/checkout@v3
