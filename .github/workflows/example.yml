@@ -21,9 +21,8 @@ jobs:
 
       - name: Test with Gradle
         run: ./gradlew test
-
-      - name: Log coverage percentages to workflow output
-        if: ${{ always() }}
-        run: |
-          echo "coverage = ${{ steps.jacoco.outputs.coverage }}"
-          echo "branches = ${{ steps.jacoco.outputs.branches }}"
+      - name: Upload Jacoco Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: jacoco-report
+          path: build/reports/jacoco/test/html/index.html
