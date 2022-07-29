@@ -11,12 +11,5 @@ jobs:
     steps:
       - run: ls -al
       - uses: actions/checkout@v3
-        with:
-          path: project
-      - run: cd project
-      - run: ls -al
-
-  cache:
-    runs-on: ubuntu-latest
-    steps:
+      - run: ./gradlew dependencies
       - run: ls -al
