@@ -23,6 +23,7 @@ jobs:
         run: ./gradlew test
 
       - name: Log coverage percentages to workflow output
+        if: ${{ always() }}
         run: |
           echo "coverage = ${{ steps.jacoco.outputs.coverage }}"
           echo "branches = ${{ steps.jacoco.outputs.branches }}"
