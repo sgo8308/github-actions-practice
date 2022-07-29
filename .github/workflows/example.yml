@@ -9,5 +9,7 @@ jobs:
     steps:
       - run: ls -al
       - uses: actions/checkout@v3
+        with:
+          path: project
       - run: ls -al
       - run: cat .github/workflows/example.yml
