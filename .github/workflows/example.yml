@@ -1,10 +1,10 @@
 name: 'test-every-push'
 
-# 푸시하거나 pull request가 머지될 때 워크플로 실행
+# 푸시하거나 pull request가 머지될 때 workflow 실행
 on: push
 
 jobs:
   echo:
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'Hello, Github Actions!'
+      - run: ls -al
