@@ -1,7 +1,9 @@
 name: 'test-every-push'
 
 # 푸시하거나 pull request가 머지될 때 workflow 실행
-on: push
+on:
+  push
+  pull_request
 
 jobs:
   checkout:
