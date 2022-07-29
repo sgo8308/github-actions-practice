@@ -1,7 +1,6 @@
 name: 'test-every-push'
 
-# 푸시하거나 pull request가 머지될 때 workflow 실행
-on:
+on: # 언제 workflow가 실행될 것인지
   push:
   pull_request:
 
@@ -23,3 +22,7 @@ jobs:
       - name: Test with Gradle
         run: ./gradlew test
 
+      - name: Log coverage percentages to workflow output
+        run: |
+          echo "coverage = ${{ steps.jacoco.outputs.coverage }}"
+          echo "branches = ${{ steps.jacoco.outputs.branches }}"
