@@ -23,6 +23,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: build
+          cache-read-only: ${{ github.ref != 'refs/heads/main' && github.ref != 'refs/heads/newbranch' }}
 
       - name: Upload Jacoco Report # Jacoco Report 업로드하기 Actions Summary에서 확인 가능하다.
         if: ${{ always() }} # 위에서 테스트가 실패해도 이 step이 실행되도록 설정. if 뒤 expression이 true일 경우 이 step이 실행된되는데 always()는 항상 true다.
