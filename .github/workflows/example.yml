@@ -22,7 +22,7 @@ jobs:
       - name: Test with Gradle
         run: ./gradlew test
 
-      - name: Upload Jacoco Report # Jacoco Report 업로드하기 Actions Summary에서 확인 가능하다.
+      - name: Upload Jacoco Report
         if: ${{ always() }}
         uses: actions/upload-artifact@v3
         with:
