@@ -16,14 +16,17 @@ jobs:
           java-version: 11
           distribution: 'adopt'
 
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
       - name: Test with Gradle
-        run: ./gradlew test
+        run: ./gradlew build
 
-      - name: Upload Jacoco Report
-        if: ${{ always() }}
+      - name: Upload Jacoco Report # Jacoco Report 업로드하기 Actions Summary에서 확인 가능하다.
+        if: ${{ always() }} # 위에서 테스트가 실패해도 이 step이 실행되도록 설정. if 뒤 expression이 true일 경우 이 step이 실행된되는데 always()는 항상 true다.
         uses: actions/upload-artifact@v3
         with:
           name: jacoco-report
