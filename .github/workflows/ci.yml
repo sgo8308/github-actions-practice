@@ -1,0 +1,11 @@
+name: 'CI'
+
+on:
+  push: [develop]
+  pull_request: [develop]
+
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{runner.os}}
