@@ -29,15 +29,13 @@ dependencies {
 	implementation 'org.springframework.session:spring-session-data-redis'
 }
 
-build{
-	if (project.hasProperty('jvmArgs')) {
-		jvmArgs project.jvmArgs.split('\\s+')
-	}
-}
-
 test {
 	useJUnitPlatform()
 	finalizedBy jacocoTestReport
+
+	if (project.hasProperty('jvmArgs')) {
+		jvmArgs project.jvmArgs.split('\\s+')
+	}
 }
 
 jacoco {
