@@ -33,8 +33,11 @@ test {
 	useJUnitPlatform()
 	finalizedBy jacocoTestReport
 
-	jvmArgs "-Dspring.redis.host=".concat(project.property("spring.redis.host"))
-	jvmArgs "-Dspring.redis.password=".concat(project.property("spring.redis.password"))
+	jvmArgs "-Dspring.redis.host=".concat(System.getenv("spring.redis.host"))
+	jvmArgs "-Dspring.redis.password=".concat(System.getenv("spring.redis.password"))
+
+//	jvmArgs "-Dspring.redis.host=".concat(project.property("spring.redis.host"))
+//	jvmArgs "-Dspring.redis.password=".concat(project.property("spring.redis.password"))
 }
 
 jacoco {
