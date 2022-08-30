@@ -33,9 +33,8 @@ test {
 	useJUnitPlatform()
 	finalizedBy jacocoTestReport
 
-	if (project.hasProperty('jvmArgs')) {
-		jvmArgs project.jvmArgs.split('\\s+')
-	}
+	jvmArgs "-Dspring.redis.host=".concat(project.property("spring.redis.host"))
+	jvmArgs "-Dspring.redis.password=".concat(project.property("spring.redis.password"))
 }
 
 jacoco {
