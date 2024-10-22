@@ -8,6 +8,7 @@ public class GithubActionsPracticeApplication {
 
 	public static void main(String[] args) {
 		System.out.println("hello word");
+    System.out.println("hello word");
 		SpringApplication.run(GithubActionsPracticeApplication.class, args);
 	}
 
