@@ -10,5 +10,4 @@ class GithubActionsPracticeApplicationTests {
 	void contextLoads() {
 		System.out.println("hi");
 	}
-
 }
